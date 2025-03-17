@@ -182,6 +182,14 @@ app.get("/last-expense", authenticateUser, (req, res) => {
   });
 });
 
+const cors = require('cors');
+app.use(cors({
+    origin: 'https://aswin0056.github.io/expensaver/',  // Or specify frontend URL like "https://your-frontend-url.com"
+    methods: ['GET', 'POST'],
+    credentials: true
+}));
+
+
 
 // Start Server
 const PORT = process.env.PORT || 5000;
